@@ -101,10 +101,10 @@ setup_master() {
         sudo chown \$(id -u):\$(id -g) \$HOME/.kube/config
     "
 
-    # Install Calico Network Plugin
+    # Install Calico Network Plugin & Calico
+    # curl -O https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml
     run_in_vm master "
         kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/tigera-operator.yaml
-        curl -O https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/custom-resources.yaml
         kubectl apply -f custom-resources.yaml
     "
 
