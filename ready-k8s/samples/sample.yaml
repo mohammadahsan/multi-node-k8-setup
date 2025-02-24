@@ -52,6 +52,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "learn-clusterissuer"
 spec:
+  ingressClassName: nginx
   rules:
     - host: sample.learn.com
       http:
